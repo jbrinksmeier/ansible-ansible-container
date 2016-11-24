@@ -1,0 +1,11 @@
+---
+- name: downloads get-pip.py
+  get_url:
+    url: https://bootstrap.pypa.io/get-pip.py
+    dest: /tmp/get-pip.py
+- name: installs pip
+  command: python /tmp/get-pip.py creates=/bin/pip2
+- name: upgrade setuptools
+  pip: name=setuptools state=latest
+- name: installs ansible-container
+  pip: name=ansible-container
