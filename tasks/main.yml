@@ -8,4 +8,4 @@
 - name: upgrade setuptools
   pip: name=setuptools state=latest
 - name: installs ansible-container
-  pip: name=ansible-container
+  pip: name=ansible-container['{{ engines | join(",")}}']
